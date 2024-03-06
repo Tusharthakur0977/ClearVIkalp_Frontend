@@ -77,7 +77,7 @@ const BookingCard = () => {
         event: "booking_card_submit",
         card_type: isBookModal ? "popup_card" : "top-card",
       });
-      await fetch("http://localhost:5000/api/append", {
+      await fetch("https://fancy-erin-chimpanzee.cyclic.app/api/append", {
         method: "POST",
         body: JSON.stringify({
           name: formData.name,
