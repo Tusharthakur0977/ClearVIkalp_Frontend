@@ -185,7 +185,7 @@ const BookingCard = () => {
             label="Request a Callback"
             bgColor="#22577a"
             color="white"
-            extraClasses="w-full sm:w-[50%] lg:w-[35%] sm:self-center mt-3"
+            extraClasses="w-full sm:w-[50%] lg:w-[35%]  sm:self-center mt-3"
             type="submit"
             disabled={isDisable}
           />
