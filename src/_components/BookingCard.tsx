@@ -3,7 +3,6 @@ import { IoMdCloseCircle } from "react-icons/io";
 import { BookModalContext } from "../context/BookModalContext";
 import CHECKLIST from "../images/checklist.png";
 import StickyButton from "./StickyButton";
-
 interface CustomWindow extends Window {
   dataLayer: any[]; // You might want to define a specific type for your dataLayer items
 }
@@ -78,7 +77,7 @@ const BookingCard = () => {
         event: "booking_card_submit",
         card_type: isBookModal ? "popup_card" : "top-card",
       });
-      await fetch("https://fancy-erin-chimpanzee.cyclic.app/api/append", {
+      await fetch("http://localhost:5000/api/append", {
         method: "POST",
         body: JSON.stringify({
           name: formData.name,
@@ -88,6 +87,9 @@ const BookingCard = () => {
           time: date.toLocaleDateString() + " " + date.toLocaleTimeString(),
           parameters: parameters,
         }),
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
         .then((res) => {
           if (res.ok) {
