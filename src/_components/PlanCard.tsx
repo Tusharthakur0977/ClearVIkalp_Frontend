@@ -81,7 +81,7 @@ const PlanCard: React.FC<IPlanCard> = ({
             {amount.discount}
           </p>
           <span className="mr-2 ms-1 text-xl text-white font-bold">
-            ₹ {amount.withDiscount}
+            {amount.withDiscount}
           </span>
           <span className="text-gray-400 line-through">
             {amount.withoutDiscount}
@@ -112,7 +112,7 @@ const PlanCard: React.FC<IPlanCard> = ({
         <StickyButton
           isAnimated
           id={btnId}
-          label="Select a Plan"
+          label="Book your blood test"
           color="#22577a"
           onClick={() => {
             setSelectedPLan(name);

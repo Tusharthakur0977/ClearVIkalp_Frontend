@@ -3,7 +3,6 @@ import TagManager from "react-gtm-module";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import Accreditation from "./_components/Accreditation";
-import BookingCard from "./_components/BookingCard";
 import FAQ from "./_components/FAQ";
 import Hero from "./_components/Hero";
 import BookTestModal from "./_components/Modals/BookTestModal";
@@ -58,7 +57,6 @@ const App = () => {
     <div className="flex flex-col justify-center items-center pb-10 bg-[#f1ede8]">
       <TopHeader />
       <Hero />
-      <BookingCard />
       <Plans />
       <WhoWants />
       <StepsJourney />
@@ -67,7 +65,7 @@ const App = () => {
       <BookTestModal />
       <StickyButton
         id="sticky_request_call_back"
-        label="Request a Callback"
+        label="Book your Blood Test"
         bgColor="#ff9800"
         color="white"
         isSticky

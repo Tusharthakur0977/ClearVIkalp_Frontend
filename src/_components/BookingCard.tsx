@@ -107,7 +107,7 @@ const BookingCard = () => {
 
   return (
     <div
-      className={`w-[95%] ${
+      className={` ${
         isFormFilled && "bg-white border border-[#22577a]"
       } bg-white rounded-md flex flex-col px-4 py-6 sm:py-10 justify-center gap-2 shadow-lg ring-1 ring-slate-900/10`}
     >
@@ -129,7 +129,10 @@ const BookingCard = () => {
           )}
         </p>
         {isBookModal && (
-          <button className="absolute top-1 right-0" onClick={handleOpen}>
+          <button
+            className="absolute top-[-10px] right-[-10px]"
+            onClick={handleOpen}
+          >
             <IoMdCloseCircle
               style={{ color: "black", width: 20, height: 20 }}
             />
@@ -182,7 +185,7 @@ const BookingCard = () => {
 
           <StickyButton
             id={isBookModal ? "pop_up_booking_card" : "top_booking_card"}
-            label="Request a Callback"
+            label="Book your Blood Test"
             bgColor="#22577a"
             color="white"
             extraClasses="w-full sm:w-[50%] lg:w-[35%]  sm:self-center mt-3"

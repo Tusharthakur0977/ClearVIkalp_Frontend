@@ -1,12 +1,17 @@
+import { useContext } from "react";
 import { IoCall } from "react-icons/io5";
 import FeatureData from "../_data/FeatureCardData";
+import { BookModalContext } from "../context/BookModalContext";
 import useWindowDimensions from "../hooks/useWindowDimensions";
-import LOGO from "../images/logo.png";
 import MOBILE_BANNER from "../images/banner/creative.jpg";
 import DESKTOP_BANNER from "../images/banner/desktop-banner.jpg";
+import LOGO from "../images/logo.png";
+import BookingCard from "./BookingCard";
 
 const Hero = () => {
   const { width } = useWindowDimensions();
+
+  const { setIsBookModal } = useContext(BookModalContext);
 
   return (
     <div className="w-[100%] sm:w-[95%] flex flex-col mb-4">
@@ -32,7 +37,7 @@ const Hero = () => {
           Be CLEAR on your health.
         </span>{" "}
         <span className="text-[#22577a] font-sans">
-          Say YES to preventive health checkup
+          Say YES to preventive Blood checkup
         </span>
       </p>
       <div className="w-full overflow-hidden py-3 sm:px-0  ">
@@ -44,9 +49,14 @@ const Hero = () => {
         />
       </div>
 
+      <div className="w-full items-center py-5 sm:px-0 px-3">
+        <BookingCard />
+      </div>
+
       <div className="w-full grid gap-4 grid-cols-2 lg:grid-cols-4 md:max-w-2xl lg:max-w-none px-3 py-3 sm:px-0 sm:py-5">
         {FeatureData.map((card, index) => (
           <div
+            onClick={() => setIsBookModal(true)}
             key={card.title + index.toString()}
             className="relative flex flex-col items-center p-2 sm:p-6 bg-white shadow-xl rounded-md"
           >
