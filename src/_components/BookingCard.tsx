@@ -107,7 +107,7 @@ const BookingCard = () => {
 
   return (
     <div
-      className={` ${
+      className={`${isBookModal && "w-[95%]"}  ${
         isFormFilled && "bg-white border border-[#22577a]"
       } bg-white rounded-md flex flex-col px-4 py-6 sm:py-10 justify-center gap-2 shadow-lg ring-1 ring-slate-900/10`}
     >
