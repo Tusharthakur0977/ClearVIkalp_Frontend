@@ -62,9 +62,7 @@ const Plans = () => {
           {renderPlanCard}
         </Slider>
       ) : (
-        <div className="w-full grid gap-3 grid-cols-3 sm:p-5">
-          {renderPlanCard}
-        </div>
+        <div className="w-full grid grid-cols-2 sm:p-5">{renderPlanCard}</div>
       )}
     </div>
   );

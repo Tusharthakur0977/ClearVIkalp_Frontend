@@ -12,6 +12,7 @@ import StickyButton from "./_components/StickyButton";
 import TopHeader from "./_components/TopHeader";
 import WhoWants from "./_components/WhoWants";
 import { BookModalContext } from "./context/BookModalContext";
+import { useSearchParams } from "react-router-dom";
 
 const paramNames = [
   "campaignid",
@@ -36,18 +37,20 @@ const App = () => {
   const { isBookModal, setIsBookModal, setParameters } =
     useContext(BookModalContext);
 
-  // useEffect(() => {
-  //   const params = paramNames.reduce(
-  //     (acc: Record<string, string>, paramName) => {
-  //       const paramValue = searchParams.get(paramName);
-  //       if (paramValue) acc[paramName] = paramValue;
-  //       return acc;
-  //     },
-  //     {}
-  //   );
+  const [searchParams] = useSearchParams();
 
-  //   setParameters(params);
-  // }, [searchParams, setParameters]);
+  useEffect(() => {
+    const params = paramNames.reduce(
+      (acc: Record<string, string>, paramName) => {
+        const paramValue = searchParams.get(paramName);
+        if (paramValue) acc[paramName] = paramValue;
+        return acc;
+      },
+      {}
+    );
+
+    setParameters(params);
+  }, [searchParams, setParameters]);
 
   useEffect(() => {
     TagManager.initialize({ gtmId: GTM_ID });

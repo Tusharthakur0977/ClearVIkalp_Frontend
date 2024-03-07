@@ -4,15 +4,18 @@ import App from "./App";
 import BookModalProvider from "./context/BookModalContext";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <BookModalProvider>
-      <App />
-    </BookModalProvider>
+    <BrowserRouter>
+      <BookModalProvider>
+        <App />
+      </BookModalProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
