@@ -76,11 +76,20 @@ const PlanCard: React.FC<IPlanCard> = ({
           {title}
         </p>
 
-        <div className="flex text-white justify-center items-center my-4">
-          <p className=" px-3 py-1 rounded-lg text-white bg-[#EB1633] text-[12px] text-center">
-            {amount.discount}
-          </p>
-          <span className="mr-2 ms-1 text-xl text-white font-bold">
+        <div
+          className={`flex text-white justify-center items-center my-4 ${
+            id === "planBanner2" && "flex-col sm:flex-row"
+          }`}
+        >
+          <div className={`flex items-center order-2 sm:order-1`}>
+            <p className=" px-2 py-1 rounded-lg font-bold text-gray-300 text-[14px] text-center">
+              {id === "planBanner2" && "Upto"}
+            </p>
+            <p className=" px-3 py-1 rounded-lg text-white bg-[#EB1633] text-[12px] text-center">
+              {amount.discount}
+            </p>
+          </div>
+          <span className="mr-2 ms-1 mb-1 text-xl text-white font-bold">
             {amount.withDiscount}
           </span>
           <span className="text-gray-400 line-through">

@@ -5,7 +5,7 @@ const PlanData = [
     name: "Clearvikalp Blood Checkup",
     title: "Heart, Diabetes, Liver, Kidney, Infection, screening",
     amount: {
-      withDiscount: "1599",
+      withDiscount: "₹ 1599",
       withoutDiscount: "4569",
       discount: "65% off",
     },
@@ -31,7 +31,7 @@ const PlanData = [
     title:
       "Heart, Diabetes, Liver, Kidney, Infection screening, Vitamin screening, Thyroid, Prostate screening, HIV screening",
     amount: {
-      withDiscount: "Starting at  ₹ 1599",
+      withDiscount: "Starting at ₹ 1599",
       withoutDiscount: "",
       discount: "86% off",
     },
