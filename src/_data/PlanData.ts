@@ -27,13 +27,13 @@ const PlanData = [
   {
     id: "planBanner2",
     btnid: "planSelection2",
-    name: "Clearvikalp Custom Blood Test",
+    name: "Customized Blood Checkup",
     title:
       "Heart, Diabetes, Liver, Kidney, Infection screening, Vitamin screening, Thyroid, Prostate screening, HIV screening",
     amount: {
       withDiscount: "Starting at ₹ 1599",
       withoutDiscount: "",
-      discount: "86% off",
+      discount: "Upto 86% off",
     },
     noOfTest: "75",
     test: [
