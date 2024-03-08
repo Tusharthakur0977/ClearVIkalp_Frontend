@@ -33,7 +33,7 @@ const PlanData = [
     amount: {
       withDiscount: "Starting at ₹ 1599",
       withoutDiscount: "",
-      discount: "Upto 86% off",
+      discount: "86% off",
     },
     noOfTest: "75",
     test: [
