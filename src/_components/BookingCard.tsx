@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Dropdown from "react-dropdown";
+import "react-dropdown/style.css";
 import { IoMdCloseCircle } from "react-icons/io";
 import { BookModalContext } from "../context/BookModalContext";
 import CHECKLIST from "../images/checklist.png";
@@ -22,11 +24,14 @@ const BookingCard = () => {
     phone: "",
   });
 
+  const [selectedLab, setSelectedLab] = useState("");
+
   const [isDisable, setIsDisable] = useState(false);
 
   const [errors, setErrors] = React.useState({
     name: "",
     phone: "",
+    labs: "",
   });
 
   const handleChange = (e: { target: { name: any; value: any } }) => {
@@ -64,10 +69,11 @@ const BookingCard = () => {
   const onSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    if (formData.name === "" && formData.phone === "") {
+    if (formData.name === "" && formData.phone === "" && selectedLab === "") {
       setErrors({
         name: "Please enter your name",
         phone: "Please enter your Phone Number",
+        labs: "Please select a Preferred Lab Partner",
       });
       return;
     }
@@ -82,6 +88,7 @@ const BookingCard = () => {
         body: JSON.stringify({
           name: formData.name,
           phone: formData.phone,
+          lab: selectedLab,
           plan: selectedPLan || "",
           date: date.toLocaleDateString(),
           time: date.toLocaleDateString() + " " + date.toLocaleTimeString(),
@@ -180,6 +187,23 @@ const BookingCard = () => {
                   {errors.phone}
                 </p>
               )}
+            </div>
+            <div className="flex flex-col gap-1 sm:gap-2 w-full">
+              <Dropdown
+                placeholderClassName="py-[3px]"
+                arrowClassName="mt-2"
+                controlClassName="form-input items-center appearance-none bg-white border border-gray-700 focus:border-gray-600 rounded-md text-sm sm:text-base mb-2 sm:mb-0 sm:mr-2 text-black placeholder-gray-500"
+                options={[
+                  "Metropolis",
+                  "Redcliffe",
+                  "Orange Health Labs",
+                  "Manipal TRUtest",
+                  "Aspira Labs",
+                ]}
+                onChange={(val) => setSelectedLab(val.value)}
+                value={selectedLab}
+                placeholder="Select Preffered Lab Prtner"
+              />
             </div>
           </div>
 
