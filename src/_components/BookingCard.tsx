@@ -200,10 +200,18 @@ const BookingCard = () => {
                   "Manipal TRUtest",
                   "Aspira Labs",
                 ]}
-                onChange={(val) => setSelectedLab(val.value)}
+                onChange={(val) => {
+                  setSelectedLab(val.value);
+                  setErrors({ ...errors, labs: "" });
+                }}
                 value={selectedLab}
-                placeholder="Select Preffered Lab Prtner"
+                placeholder="Select Preferred Lab Prtner"
               />
+              {errors.labs && (
+                <p className="text-red-500 font-semibold text-sm pb-2">
+                  {errors.labs}
+                </p>
+              )}
             </div>
           </div>
 
