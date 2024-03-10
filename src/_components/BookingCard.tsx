@@ -77,8 +77,8 @@ const BookingCard = () => {
       });
       return;
     }
-    setIsDisable(true);
-    if (errors.name === "" && errors.phone === "") {
+    if (errors.name === "" && errors.phone === "" && errors.labs === "") {
+      setIsDisable(true);
       (window as unknown as CustomWindow).dataLayer.push({
         event: "booking_card_submit",
         card_type: isBookModal ? "popup_card" : "top-card",
