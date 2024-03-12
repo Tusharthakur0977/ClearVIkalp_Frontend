@@ -69,12 +69,16 @@ const BookingCard = () => {
   const onSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    if (formData.name === "" && formData.phone === "" && selectedLab === "") {
-      setErrors({
-        name: "Please enter your name",
-        phone: "Please enter your Phone Number",
-        labs: "Please select a Preferred Lab Partner",
-      });
+    if (!formData.name.trim()) {
+      setErrors({ ...errors, name: "Please enter your name" });
+      return;
+    }
+    if (!formData.phone.trim()) {
+      setErrors({ ...errors, phone: "Please enter your Phone Number" });
+      return;
+    }
+    if (!selectedLab.trim()) {
+      setErrors({ ...errors, labs: "Please select a Preferred Lab Partner" });
       return;
     }
     if (errors.name === "" && errors.phone === "" && errors.labs === "") {
