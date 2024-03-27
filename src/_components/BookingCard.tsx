@@ -87,7 +87,7 @@ const BookingCard = () => {
         event: "booking_card_submit",
         card_type: isBookModal ? "popup_card" : "top-card",
       });
-      await fetch("https://fancy-erin-chimpanzee.cyclic.app/api/append", {
+      await fetch("https://ill-cyan-coral-hat.cyclic.app/api/append", {
         method: "POST",
         body: JSON.stringify({
           name: formData.name,
